@@ -2,102 +2,128 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Critical utility classes for PostVelocity */
+.min-h-screen { min-height: 100vh; }
+.bg-gray-50 { background-color: #f9fafb; }
+.bg-white { background-color: white; }
+.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+.shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); }
+.border-b { border-bottom: 1px solid #e5e7eb; }
+.border { border: 1px solid #e5e7eb; }
+.max-w-7xl { max-width: 80rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.p-6 { padding: 1.5rem; }
+.p-4 { padding: 1rem; }
+.px-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+
+.flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.space-x-4 > * + * { margin-left: 1rem; }
+.space-x-8 > * + * { margin-left: 2rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+
+.h-16 { height: 4rem; }
+.w-8 { width: 2rem; }
+.h-8 { height: 2rem; }
+.w-12 { width: 3rem; }
+.h-12 { height: 3rem; }
+.mr-3 { margin-right: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+
+.text-gray-900 { color: #111827; }
+.text-gray-600 { color: #4b5563; }
+.text-gray-500 { color: #6b7280; }
+.text-gray-700 { color: #374151; }
+.text-white { color: white; }
+.text-blue-600 { color: #2563eb; }
+.text-green-500 { color: #10b981; }
+.text-green-600 { color: #059669; }
+.text-purple-600 { color: #9333ea; }
+.text-orange-600 { color: #ea580c; }
+.text-center { text-align: center; }
+
+.bg-green-500 { background-color: #10b981; }
+.bg-orange-500 { background-color: #f59e0b; }
+.bg-purple-500 { background-color: #8b5cf6; }
+.bg-blue-500 { background-color: #3b82f6; }
+.bg-blue-600 { background-color: #2563eb; }
+.bg-red-500 { background-color: #ef4444; }
+.bg-gray-200 { background-color: #e5e7eb; }
+
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-full { border-radius: 9999px; }
+
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+.cursor-pointer { cursor: pointer; }
+
+.border-b-2 { border-bottom-width: 2px; }
+.border-blue-500 { border-color: #3b82f6; }
+.border-transparent { border-color: transparent; }
+
+.hover\:bg-purple-600:hover { background-color: #7c3aed; }
+.hover\:bg-green-600:hover { background-color: #059669; }
+.hover\:bg-blue-600:hover { background-color: #2563eb; }
+.hover\:bg-red-600:hover { background-color: #dc2626; }
+.hover\:bg-gray-50:hover { background-color: #f9fafb; }
+.hover\:text-gray-700:hover { color: #374151; }
+.hover\:border-gray-300:hover { border-color: #d1d5db; }
+
+/* Responsive classes */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+}
+
+@media (min-width: 640px) {
+  .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .sm\:px-0 { padding-left: 0; padding-right: 0; }
+}
+
+/* App-specific styles */
 .App {
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background-color: #f9fafb;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-/* Custom PostVelocity styles */
-.postvelocity-card {
-  @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow;
-}
-
-.postvelocity-button {
-  @apply px-4 py-2 rounded-lg font-medium transition-colors;
-}
-
-.postvelocity-button-primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700;
-}
-
-.postvelocity-button-secondary {
-  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
-}
-
-.postvelocity-input {
-  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
-}
-
-.postvelocity-select {
-  @apply w-full px-3 py-2 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
-}
-
-.postvelocity-textarea {
-  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-vertical;
-}
-
-/* Platform-specific colors */
-.platform-instagram {
-  @apply bg-gradient-to-r from-purple-500 to-pink-500;
-}
-
-.platform-facebook {
-  @apply bg-blue-600;
-}
-
-.platform-linkedin {
-  @apply bg-blue-700;
-}
-
-.platform-tiktok {
-  @apply bg-gray-900;
-}
-
-.platform-youtube {
-  @apply bg-red-600;
-}
-
-.platform-twitter {
-  @apply bg-blue-400;
-}
-
-/* Loading animations */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: .5;
-  }
-}
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Responsive utilities */
-@media (max-width: 768px) {
-  .mobile-hidden {
-    display: none;
-  }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .dark-mode-text {
-    color: #f3f4f6;
-  }
-  
-  .dark-mode-bg {
     background-color: #1f2937;
   }
 }
