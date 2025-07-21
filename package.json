@@ -9,7 +9,7 @@
     "heroku-postbuild": "cd frontend && yarn install && yarn build && cd ../backend && pip install -r requirements.txt"
   },
   "engines": {
-    "node": "18.x",
+    "node": "20.x",
     "yarn": "1.x"
   },
   "dependencies": {
